@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UI/UX Portfolio - Akshatha N Daddur</title>
+  <style>
+    /* Google Fonts Import */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7ff;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: #3273dc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #2652a5;
+    }
+
+    header {
+      background-color: #1f2a48;
+      color: white;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(31, 42, 72, 0.3);
+      display: flex;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    }
+
+    nav {
+      /* Removed nav entirely */
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 0.1em;
+      color: #58a6ff;
+      cursor: default;
+    }
+
+    /* Hero Section */
+    #hero {
+      min-height: 100vh;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #58a6ff 0%, #3752a4 100%);
+      color: white;
+      text-align: center;
+      flex-direction: column;
+      padding-top: 5rem;
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+
+    #hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    #hero .btn-primary {
+      background-color: white;
+      color: #3273dc;
+      padding: 0.75rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(50, 115, 220, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    #hero .btn-primary:hover {
+      background-color: #3273dc;
+      color: white;
+      box-shadow: 0 8px 20px rgba(50, 115, 220, 0.8);
+    }
+
+    /* Sections */
+    section {
+      padding: 6rem 2rem 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: #1f2a48;
+      letter-spacing: 1.5px;
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: #3273dc;
+      display: block;
+      margin: 1rem auto 0 auto;
+      border-radius: 10px;
+    }
+
+    /* About */
+    #about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #about img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(50, 115, 220, 0.2);
+      border: 6px solid #3273dc;
+    }
+
+    #about .about-content {
+      max-width: 600px;
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: #555;
+    }
+
+    /* Skills */
+    #skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 1.5rem;
+    }
+
+    .skill {
+      background-color: white;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      padding: 1rem 1.4rem;
+      border-radius: 12px;
+      width: 180px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .skill:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(50, 115, 220, 0.3);
+    }
+
+    .skill h4 {
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+      color: #3273dc;
+    }
+
+    .skill .bar {
+      background-color: #e1e7ff;
+      border-radius: 15px;
+      overflow: hidden;
+      height: 12px;
+      margin-top: 0.8rem;
+    }
+
+    .skill .bar div {
+      height: 100%;
+      background: linear-gradient(90deg, #3273dc, #58a6ff);
+      border-radius: 15px 0 0 15px;
+    }
+
+    /* Projects */
+    #projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background-color: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(50, 115, 220, 0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(50, 115, 220, 0.3);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 160px;
+      background: #dbe5ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #3273dc;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-bottom: 3px solid #3273dc;
+    }
+
+    .project-content {
+      padding: 1rem 1.2rem;
+      flex-grow: 1;
+    }
+
+    .project-content h3 {
+      margin-bottom: 0.5rem;
+      color: #214766;
+    }
+
+    .project-content p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    /* Experience & Education */
+    #experience, #education {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      background-color: white;
+      border-left: 4px solid #3273dc;
+      padding: 1rem 1rem 1rem 1.5rem;
+      margin-bottom: 1.6rem;
+      box-shadow: 0 4px 12px rgba(50, 115, 220, 0.08);
+      border-radius: 8px;
+    }
+
+    .timeline-item h4 {
+      font-weight: 600;
+      color: #3273dc;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-item span {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #5d5d5d;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .timeline-item p {
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    /* Contact */
+    #contact {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    #contact p {
+      margin-bottom: 1rem;
+    }
+
+    #contact a {
+      color: #3273dc;
+      font-weight: 600;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1f2a48;
+      color: #98a2c7;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #about {
+        flex-direction: column;
+      }
+      #about img {
+        margin-bottom: 1.5rem;
+      }
+      #skills {
+        justify-content: center;
+      }
+      section {
+        padding: 4rem 1rem 3rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">BCA UI/UX Portfolio</div>
+  </div>
+</header>
+
+<section id="hero">
+  <h1>Hi, I'm Akshatha N Daddur</h1>
+  <p>A passionate UI/UX designer and BCA student crafting intuitive and beautiful digital experiences.</p>
+  <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Me</button>
+</section>
+
+<section id="about">
+  <img src="https://via.placeholder.com/280" alt="Akshatha N Daddur Photo" />
+  <div class="about-content">
+    <h2>About Me</h2>
+    <p>Hello! I'm a dedicated Bachelor of Computer Applications (BCA) student with a strong interest in UI/UX design. I love exploring user-centered design principles and creating engaging interfaces that deliver value and delightful experiences. I'm always eager to learn and grow my skills.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skill">
+    <h4>User Research</h4>
+    <div class="bar"><div style="width: 85%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>Wireframing & Prototyping</h4>
+    <div class="bar"><div style="width: 90%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>UI Design</h4>
+    <div class="bar"><div style="width: 88%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>Interaction Design</h4>
+    <div class="bar"><div style="width: 80%;"></div></div>
+  </div>
+  <div class="skill">
+    <h4>Adobe XD / Figma</h4>
+    <div class="bar"><div style="width: 95%;"></div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project-card">
+    <div class="project-image">Project 1 Image</div>
+    <div class="project-content">
+      <h3>E-commerce Mobile App</h3>
+      <p>Designed a seamless mobile app interface for an online shopping platform focusing on ease of navigation and checkout experience.</p>
+    </div>
+  </div>
+  <div class="project-card">
+    <div class="project-image">Project 2 Image</div>
+    <div class="project-content">
+      <h3>Educational Website Redesign</h3>
+      <p>Revamped website layout and UI for an educational portal increasing user engagement and accessibility.</p>
+    </div>
+  </div>
+  <div class="project-card">
+    <div class="project-image">Project 3 Image</div>
+    <div class="project-content">
+      <h3>Portfolio Website</h3>
+      <p>Developed my personal portfolio focusing on clear information architecture and responsive design.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline-item">
+    <h4>UI/UX Intern</h4>
+    <span>June 2023 - Aug 2023 | ABC Tech Solutions</span>
+    <p>Assisted in designing wireframes and user flows for client projects. Collaborated with developers to implement design systems.</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Freelance Designer</h4>
+    <span>Jan 2023 - Present</span>
+    <p>Designed logos, mobile app interfaces, and prototypes for small businesses and student projects.</p>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="timeline-item">
+    <h4>Bachelor of Computer Applications (BCA)</h4>
+    <span>2019 - Present | Your University Name</span>
+    <p>Focused on computer programming, web technologies, and user experience design subjects.</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Higher Secondary Education</h4>
+    <span>2017 - 2019 | Your School Name</span>
+    <p>Completed higher secondary education with a focus on science and computer studies.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>I am open to internship opportunities, freelance projects, and collaborations. Feel free to reach out.</p>
+  <p>Email: <a href="mailto:akshathandaddur3@gmail.com">akshathandaddur3@gmail.com</a></p>
+  <p>Phone: <a href="tel:+9986533360">9986533360</a></p>
+</section>
+
+<footer>
+  &copy; 2024 Akshatha N Daddur - UI/UX Portfolio for BCA Students
+</footer>
+
+</body>
+</html>
+
+
